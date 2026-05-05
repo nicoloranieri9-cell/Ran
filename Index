@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro Veicoli</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Registro Veicoli</h1>
+    <p class="subtitle">Tieni traccia di revisione, assicurazione e, con Premium, anche bollo e tagliandi.</p>
+
+    <section class="card">
+      <h2>Aggiungi veicolo</h2>
+      <form id="vehicleForm">
+        <div class="grid">
+          <label>
+            Targa
+            <input type="text" id="plate" required placeholder="AB123CD" />
+          </label>
+          <label>
+            Modello
+            <input type="text" id="model" required placeholder="Fiat Panda" />
+          </label>
+          <label>
+            Revisione
+            <input type="date" id="inspection" required />
+          </label>
+          <label>
+            Assicurazione
+            <input type="date" id="insurance" required />
+          </label>
+          <label>
+            Bollo (Premium)
+            <input type="date" id="tax" />
+          </label>
+          <label>
+            Tagliando (Premium)
+            <input type="date" id="service" />
+          </label>
+        </div>
+        <button type="submit">Salva veicolo</button>
+      </form>
+    </section>
+
+    <section class="card plans">
+      <h2>Piani</h2>
+      <div class="plan-list">
+        <article class="plan">
+          <h3>Base</h3>
+          <p class="price">Gratis</p>
+          <ul>
+            <li>1 solo veicolo</li>
+            <li>Revisione</li>
+            <li>Assicurazione</li>
+          </ul>
+        </article>
+        <article class="plan premium">
+          <h3>Premium</h3>
+          <p class="price">5,90€ / anno</p>
+          <ul>
+            <li>Più veicoli</li>
+            <li>Revisione</li>
+            <li>Assicurazione</li>
+            <li>Bollo</li>
+            <li>Tagliandi</li>
+          </ul>
+          <button id="togglePlan">Attiva Premium</button>
+        </article>
+      </div>
+      <p id="planStatus">Piano attivo: <strong>Base</strong></p>
+    </section>
+
+    <section class="card">
+      <h2>I tuoi veicoli</h2>
+      <div id="empty">Nessun veicolo registrato.</div>
+      <div id="vehicleList" class="vehicle-list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
